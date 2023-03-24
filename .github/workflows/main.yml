@@ -70,3 +70,4 @@ jobs:
           asset_path: ./dist/*
           asset_name: ${{ env.VERSION }}_${{ matrix.os }}
           asset_content_type: application/zip
+
