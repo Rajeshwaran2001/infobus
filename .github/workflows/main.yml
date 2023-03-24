@@ -35,15 +35,28 @@ jobs:
           platform: ${{ matrix.os }}
           publish: false
 
+      - name: Get Latest Git Tag
+        id: latest_tag
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const { data: tags } = await github.git.listTags({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            const latestTag = tags[0].name;
+            console.log(`Latest Git tag: ${latestTag}`);
+            return { tag: latestTag };
+
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.VERSION }}
-          release_name: ${{ env.VERSION }}
-          body: >
+          tag_name: ${{ steps.latest_tag.outputs.tag }}
+          release_name: ${{ steps.latest_tag.outputs.tag }}
+          body: |
             Changes in this Release:
             - Added feature X
             - Fixed issue Y
@@ -58,6 +71,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/*
-          asset_name: ${{ env.VERSION }}_${{ matrix.os }}
+          asset_name: ${{ steps.latest_tag.outputs.tag }}_${{ matrix.os }}
           asset_content_type: application/zip
-
