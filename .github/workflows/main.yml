@@ -34,15 +34,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           platform: ${{ matrix.os }}
           publish: false
-          args: |
-            --config.electronVersion=23.2.0
-            --config.dir=.
-            --config.publish.provider=github
-            --config.publish.owner=Rajeshwaran
-            --config.publish.repo=infobus
-            --config.publish.vPrefixedTagName=true
-            --config.publish.releaseType=release
-            --${{ matrix.os }}
 
       - name: Create GitHub Release
         id: create_release
