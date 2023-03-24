@@ -1,0 +1,28 @@
+{
+  "name": "infobus-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard App For Infobus",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infobus-mdu/infobus.git"
+  },
+  "keywords": [
+    "Dahboard"
+  ],
+  "author": "Rajeshwaran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infobus-mdu/infobus/issues"
+  },
+  "homepage": "https://github.com/infobus-mdu/infobus#readme",
+  "devDependencies": {
+    "electron": "^23.2.0"
+  },
+  "dependencies": {
+    "electron-updater": "^5.3.0"
+  }
+}
