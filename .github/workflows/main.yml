@@ -21,9 +21,9 @@ jobs:
       - name: Build Electron App
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
-          # Build and package the app for the current platform
-          # Use the dist:${{ matrix.os }} script defined in package.json
-          # Use the latest version of Electron
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          platform: ${{ matrix.os }}
+          publish: true
           args: |
             --publish=always
             --config.electronVersion=23.2.0
