@@ -39,7 +39,7 @@ jobs:
             --config.electronVersion=23.2.0
             --config.dir=.
             --config.publish.provider=github
-            --config.publish.owner=infobus-mdu
+            --config.publish.owner=Rajeshwaran
             --config.publish.repo=infobus
             --config.publish.vPrefixedTagName=true
             --config.publish.releaseType=release
