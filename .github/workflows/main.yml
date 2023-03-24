@@ -43,7 +43,7 @@ jobs:
         with:
           tag_name: ${{ env.VERSION }}
           release_name: ${{ env.VERSION }}
-          body: |
+          body: >
             Changes in this Release:
             - Added feature X
             - Fixed issue Y
