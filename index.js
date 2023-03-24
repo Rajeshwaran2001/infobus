@@ -2,16 +2,30 @@ const { app, BrowserWindow } = require('electron');
 const { autoUpdater } = require('electron-updater');
 
 let mainWindow;
+let loadingScreen;
+
+function createLoadingScreen() {
+  // Create the loading screen with a loading indicator
+  loadingScreen = new BrowserWindow({ width: 400, height: 400, frame: false });
+  loadingScreen.loadURL(`file://${__dirname}/loading.html`);
+  loadingScreen.on('closed', () => (loadingScreen = null));
+}
 
 function createWindow() {
   // Get the screen size of the user's display
   const { width, height } = require('electron').screen.getPrimaryDisplay().workAreaSize;
-  
+
   // Create the main window with the screen size
-  mainWindow = new BrowserWindow({ width, height });
+  mainWindow = new BrowserWindow({ width, height, show: false });
   mainWindow.loadURL('https://test.infobus.in/login');
 
-  
+  // Show the loading screen while the page is loading
+  mainWindow.once('ready-to-show', () => {
+    if (loadingScreen) {
+      loadingScreen.close();
+    }
+    mainWindow.show();
+  });
 
   // Check for updates on app start
   autoUpdater.checkForUpdatesAndNotify();
@@ -21,7 +35,10 @@ function createWindow() {
   });
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+  createLoadingScreen();
+  createWindow();
+});
 
 // Quit when all windows are closed, except on macOS. There, it's common for
 // applications and their menu bar to stay active until the user quits explicitly
