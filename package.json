@@ -4,7 +4,8 @@
   "description": "Dashboard App For Infobus",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
