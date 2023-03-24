@@ -18,6 +18,8 @@ jobs:
           node-version: 16
       - name: Install Dependencies
         run: npm install
+      - name: Install Snapcraft
+        run: sudo snap install snapcraft --classic
       - name: Build Electron App
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
