@@ -37,7 +37,7 @@ jobs:
 
       - name: Get Version from package.json
         id: get_version
-        run: echo "::set-env name=VERSION::$(node -p \"require('./package.json').version\")"
+        run: echo "::set-env name=VERSION::$(node -p 'require(\"./package.json\").version')"
 
       - name: Create GitHub Release
         id: create_release
