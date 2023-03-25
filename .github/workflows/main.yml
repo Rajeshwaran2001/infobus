@@ -31,6 +31,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get Version from package.json
         id: get_version
