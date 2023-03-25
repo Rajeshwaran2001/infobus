@@ -40,26 +40,21 @@ jobs:
       - name: Set Environment Variable
         run: echo "VERSION=${{ steps.get_version.outputs.version }}" >> $GITHUB_ENV
 
+      - name: Install gh tool
+        uses: cli-actions/setup-gh@v1
+
       - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v1.0.0
-          release_name: v1.0.0
-          body: >
-            Changes in this Release:
-            - Added feature X
-            - Fixed issue Y
-          draft: false
-          prerelease: false
+        run: |
+          gh release create v${{ steps.get_version.outputs.version }} \
+            --title "v${{ steps.get_version.outputs.version }}" \
+            --notes "Changes in this Release: - Added feature X - Fixed issue Y" \
+            --repo Rajeshwaran2001/infobus \
+            --target main \
+            --draft false \
+            --prerelease false
 
       - name: Upload Release Asset
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./dist/infobus-v1.0.0-${{ matrix.os }}.zip
-          tag_name: v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+        run: |
+          gh release upload v${{ steps.get_version.outputs.version }} \
+            ./dist/infobus-v${{ steps.get_version.outputs.version }}-${{ matrix.os }}.zip \
+            --repo Rajeshwaran2001/infobus
