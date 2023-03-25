@@ -1,7 +1,7 @@
 name: Build and Release Electron App
 
 on:
-  push:
+  pushs:
     branches:
       - main
 
@@ -24,13 +24,16 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Install Electron Builder
-        run: npm install electron-builder@^23.6.0
+      - name: Install Snapcraft
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo snap install snapcraft --classic
 
       - name: Build Electron App
-        run: npm run build:electron
-        env:
-          NODE_ENV: production
+        uses: samuelmeuli/action-electron-builder@v1.6.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          platform: ${{ matrix.os }}
+          publish: false
 
       - name: Get Version from package.json
         id: get_version
@@ -62,5 +65,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/*
-          asset_name:  infobus-${{ env.VERSION }}-${{ matrix.os }}
+          asset_name:  infobus-dashboard-${{ env.VERSION }}-${{ matrix.os }}
           asset_content_type: application/zip
