@@ -58,7 +58,7 @@ jobs:
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          files: ./dist/infobus-v1.0.0-${{ matrix.os }}.zip
+          files: infobus-v1.0.0-${{ matrix.os }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
