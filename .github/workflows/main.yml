@@ -38,7 +38,7 @@ jobs:
         run: echo "::set-output name=version::$(node -p 'require(\"./package.json\").version')"
 
       - name: Set Environment Variable
-        run: echo "VERSION=v1.0.0" >> $GITHUB_ENV
+        run: echo "VERSION=${{ steps.get_version.outputs.version }}" >> $GITHUB_ENV
 
       - name: Create GitHub Release
         id: create_release
@@ -56,12 +56,9 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./dist/infobus-v1.0.0-${{ matrix.os }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/infobus-v1.0.0-${{ matrix.os }}.zip
-          asset_name: infobus-v1.0.0-${{ matrix.os }}.zip
-          asset_content_type: application/zip
+
