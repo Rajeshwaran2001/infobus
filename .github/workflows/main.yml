@@ -63,6 +63,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/infobus-v1.0.0-${{ matrix.os }}.zip
-          asset_name: infobus-v1.0.0-${{ matrix.os }}.zip
+          asset_path: ${{ env.PACKAGE_PATH }}
+          asset_name: ${{ env.PACKAGE_PATH }}
           asset_content_type: application/zip
