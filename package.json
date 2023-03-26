@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder",
+    "build": "electron-builder --mac --windows --linux",
     "dist:win": "electron-builder --win --x64",
     "dist:linux": "electron-builder --linux --x64",
     "dist:mac": "electron-builder --mac --x64"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/infobus-mdu/infobus.git"
+    "url": "git+https://github.com/Rajeshwaran2001/infobus.git"
   },
   "keywords": [
     "Dahboard"
@@ -20,9 +20,9 @@
   "author": "Rajeshwaran",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/infobus-mdu/infobus/issues"
+    "url": "https://github.com/Rajeshwaran2001/infobus/issues"
   },
-  "homepage": "https://github.com/infobus-mdu/infobus#readme",
+  "homepage": "https://github.com/Rajeshwaran2001/infobus#readme",
   "devDependencies": {
     "electron": "^23.2.0",
     "electron-builder": "^23.6.0"
@@ -30,5 +30,38 @@
   "dependencies": {
     "electron-updater": "^5.3.0",
     "fs.promises": "^0.1.2"
+  },
+  "build": {
+    "appId": "in.dashboard.infobus",
+    "productName": "Infobus Dashboard",
+    "copyright": "Copyright © 2023 ${author}",
+    "mac": {
+      "icon": "./public/icons/mac/icon.icns",     
+      "category": "public.app-category.lifestyle"
+    },
+		"dmg": {
+			"icon": false
+		},
+		"linux": {
+			"target": ["AppImage"],
+			"category": "Office"
+		},
+    "win": {
+      "icon": "./public/icons/png/Logo.png" 
+    },
+    
+    "files": [
+      "./build/**/*",
+      "./dist/**/*",
+      "./node_modules/**/*",
+      "./public/**/*",       
+      "*.js"
+    ],
+    "asarUnpack": [
+      "loading.html"
+    ],
+    "directories": {
+      "buildResources": "public" 
+    }
   }
 }
