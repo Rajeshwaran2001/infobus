@@ -29,6 +29,8 @@ jobs:
         with:
           # Provide any additional configuration options for Electron Builder here
           config: production
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          release: true
 
       - name: Create GitHub Release
         id: create_release
