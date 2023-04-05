@@ -36,4 +36,4 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: build
-      run: npm run win
+      run: npm run make
