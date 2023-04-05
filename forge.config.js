@@ -46,7 +46,7 @@ module.exports = {
           'https://raw.githubusercontent.com/Rajeshwaran2001/infobus/main/assets/icons/logo.ico',
         loadingGif: './assets/loading.gif',
         noMsi: true,
-        setupExe: `InfoBus-${version}-win32-${arch}-setup.exe`,
+        setupExe: `InfoBus-${version}-win64-${arch}-setup.exe`,
         setupIcon: path.resolve(iconDir, 'logo.ico'),
       }),
     },
