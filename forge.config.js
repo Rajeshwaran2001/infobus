@@ -36,28 +36,19 @@ module.exports = {
   ],
   makers: [
     {
-      name: 'InfoBus',
-      authors: 'Rajeshwaran',
-      exe: 'InfoBus.exe',
-      iconUrl:
-        'https://raw.githubusercontent.com/Rajeshwaran2001/infobus/main/assets/icons/logo.ico',
-      loadingGif: './assets/loading.gif',
-      noMsi: true,
-      setupExe: `InfoBus-${version}-win32-ia32-setup.exe`,
-      setupIcon: path.resolve(iconDir, 'logo.ico'),
-      arch: 'ia32'
-    },
-    {
-      name: 'InfoBus',
-      authors: 'Rajeshwaran',
-      exe: 'InfoBus.exe',
-      iconUrl:
-        'https://raw.githubusercontent.com/Rajeshwaran2001/infobus/main/assets/icons/logo.ico',
-      loadingGif: './assets/loading.gif',
-      noMsi: true,
-      setupExe: `InfoBus-${version}-win32-x64-setup.exe`,
-      setupIcon: path.resolve(iconDir, 'logo.ico'),
-      arch: 'x64'
+      name: '@electron-forge/maker-squirrel',
+      platforms: ['win32'],
+      config: (arch) => ({
+        name: 'InfoBus',
+        authors: 'Rajeshwaran',
+        exe: 'InfoBus.exe',
+        iconUrl:
+          'https://raw.githubusercontent.com/Rajeshwaran2001/infobus/main/assets/icons/logo.ico',
+        loadingGif: './assets/loading.gif',
+        noMsi: true,
+        setupExe: `InfoBus-${version}-win32-${arch}-setup.exe`,
+        setupIcon: path.resolve(iconDir, 'logo.ico'),
+      }),
     },
     {
       name: '@electron-forge/maker-zip',
