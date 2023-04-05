@@ -56,13 +56,11 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      platforms: ['linux'],
-      config: commonLinuxConfig,
+      "config": {}
     },
     {
       name: '@electron-forge/maker-rpm',
-      platforms: ['linux'],
-      config: commonLinuxConfig,
+      "config": {}
     },
   ],
 };
