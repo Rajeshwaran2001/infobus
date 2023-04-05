@@ -65,5 +65,3 @@ jobs:
             out/**/*.rpm
             out/**/*.zip
             out/**/RELEASES
-      - name: List files in out/
-        run: ls -R out/
