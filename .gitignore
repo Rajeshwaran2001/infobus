@@ -6,7 +6,6 @@ node_modules
 *.pnp
 *.pnp.loader.mjs
 package-lock.json
-yarn.lock
 yarn-error.log
 *.lock
 out/
