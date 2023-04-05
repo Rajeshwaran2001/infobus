@@ -1,7 +1,6 @@
 {
   "name": "infobus",
-  "productName": "infobus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Dashboard App For Infobus",
   "main": "index.js",
   "scripts": {

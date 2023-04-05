@@ -56,11 +56,11 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      "config": {}
+      config: {},
     },
     {
       name: '@electron-forge/maker-rpm',
-      "config": {}
+      config: {},
     },
   ],
 };
