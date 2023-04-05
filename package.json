@@ -5,12 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
-    "build": "electron-builder",
-    "dist:win": "electron-builder --win --x64",
-    "dist:linux": "electron-builder --linux --x64",
-    "dist:mac": "electron-builder --mac --x64",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "repository": {
     "type": "git",
@@ -31,6 +28,7 @@
     "@electron-forge/maker-rpm": "^6.1.1",
     "@electron-forge/maker-squirrel": "^6.1.1",
     "@electron-forge/maker-zip": "^6.1.1",
+    "@electron-forge/publisher-github": "^6.1.1",
     "electron": "^23.2.0"
   },
   "dependencies": {
