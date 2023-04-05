@@ -1,15 +1,14 @@
 {
   "name": "infobus",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Dashboard App For Infobus",
   "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "winmake": "electron-forge make --arch=ia32,x64",
     "publish": "electron-forge publish",
-    "winpublish": "electron-forge publish --arch=ia32,x64"
+    "winpublish": "electron-forge publish --arch=ia32"
   },
   "repository": {
     "type": "git",
