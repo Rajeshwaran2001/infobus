@@ -1,6 +1,6 @@
 {
   "name": "infobus",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Dashboard App For Infobus",
   "main": "index.js",
   "scripts": {
@@ -39,8 +39,17 @@
   },
   "build": {
     "appId": "in.dashboard.infobus",
-    "productName": "Infobus Dashboard",
+    "productName": "Infobus",
     "copyright": "Copyright © 2023 ${author}",
+    "squirrelWindows": {
+      "name": "Infobus Dashboard",
+      "iconUrl": "https://raw.githubusercontent.com/Rajeshwaran2001/infobus/main/assets/icons/logo.ico",
+      "setupIcon": "./assets/icons/logo.ico",
+      "shortcutName": "Infobus",
+      "menuGroupName": "Infobus",
+      "menuSubFolderName": "Infobus",
+      "perMachine": true
+    },
     "mac": {
       "icon": "./public/icons/mac/icon.icns",
       "category": "public.app-category.lifestyle"
