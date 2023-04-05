@@ -6,6 +6,12 @@ const packageJson = require('./package.json');
 const { version } = packageJson;
 const iconDir = path.resolve(__dirname, 'assets', 'icons');
 
+const commonLinuxConfig = {
+  icon: {
+    scalable: path.resolve(iconDir, 'logo.svg'),
+  },
+  mimeType: ['x-scheme-handler/infobus'],
+};
 module.exports = {
   packagerConfig: {
     name: 'InfoBus',
@@ -37,13 +43,11 @@ module.exports = {
         authors: 'Rajeshwaran',
         exe: 'InfoBus.exe',
         iconUrl:
-          'https://raw.githubusercontent.com/electron/fiddle/0119f0ce697f5ff7dec4fe51f17620c78cfd488b/assets/icons/fiddle.ico',
+          'https://raw.githubusercontent.com/Rajeshwaran2001/infobus/main/assets/icons/logo.ico',
         loadingGif: './assets/loading.gif',
         noMsi: true,
         setupExe: `InfoBus-${version}-win32-${arch}-setup.exe`,
-        setupIcon: path.resolve(iconDir, 'fiddle.ico'),
-        certificateFile: process.env['WINDOWS_CODESIGN_FILE'],
-        certificatePassword: process.env['WINDOWS_CODESIGN_PASSWORD'],
+        setupIcon: path.resolve(iconDir, 'logo.ico'),
       }),
     },
     {
@@ -52,11 +56,13 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      platforms: ['linux'],
+      config: commonLinuxConfig,
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
+      platforms: ['linux'],
+      config: commonLinuxConfig,
     },
   ],
 };
