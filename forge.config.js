@@ -16,7 +16,7 @@ module.exports = {
   packagerConfig: {
     name: 'infobus',
     executableName: 'infobus',
-    asar: false,
+    asar: true,
     icon: path.resolve(__dirname, 'assets', 'icons', 'logo'),
     appBundleId: 'me.infobus.rajeshwaran',
   },

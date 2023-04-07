@@ -1,6 +1,10 @@
 const { app, BrowserWindow } = require('electron');
 const { autoUpdater } = require('electron-updater');
 
+if (require('electron-squirrel-startup')) {
+  app.quit();
+}
+
 let mainWindow;
 let loadingScreen;
 
