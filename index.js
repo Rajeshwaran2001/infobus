@@ -1,9 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const { autoUpdater } = require('electron-updater');
 
-// Run this as early in the main process as possible
-if (require('electron-squirrel-startup')) app.quit();
-
 let mainWindow;
 let loadingScreen;
 
@@ -56,6 +53,13 @@ app.on('activate', function () {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
     createWindow();
+  }
+});
+
+// Prevent the app from running during uninstallation
+app.on('before-quit', () => {
+  if (process.platform === 'win32' && process.argv.includes('--squirrel-uninstall')) {
+    app.exit();
   }
 });
 
