@@ -57,7 +57,7 @@ module.exports = {
     {
       name: "@electron-forge/maker-dmg",
       config: {
-        name: `InfoBus-v${version}-mac-${process.platform}`,
+        name: "InfoBus-v${version}-mac-${process.platform}",
         title: "InfoBus",
         version: "${version}",
         platform: "${platform}",
