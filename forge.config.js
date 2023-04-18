@@ -10,7 +10,7 @@ const commonLinuxConfig = {
   icon: {
     scalable: path.resolve(iconDir, 'logo.svg'),
   },
-  mimeType: ['x-scheme-handler/InfoBus'],
+  mimeType: ['x-scheme-handler/infobus'],
 };
 module.exports = {
   packagerConfig: {
@@ -27,7 +27,7 @@ module.exports = {
       config: {
         repository: {
           owner: 'Rajeshwaran2001',
-          name: 'InfoBus',
+          name: 'infobus',
         },
         prerelease: false,
         draft: true,
