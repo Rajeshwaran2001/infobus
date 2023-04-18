@@ -57,7 +57,7 @@ module.exports = {
     {
       name: "@electron-forge/maker-dmg",
       config: {
-        name: "infobus",
+        name: `InfoBus-v${version}-mac-${process.platform}`,
         title: "InfoBus",
         icon: path.resolve(__dirname, "assets", "icons", "logo.icns"),
         background: path.resolve(__dirname, "assets", "background.jpg"),
