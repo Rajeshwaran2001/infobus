@@ -15,7 +15,7 @@ const commonLinuxConfig = {
 module.exports = {
   packagerConfig: {
     name: 'infobus',
-    xecutableName: 'infobus',
+    executableName: 'infobus',
     asar: true,
     icon: path.resolve(__dirname, 'assets', 'icons', 'logo'),
     appBundleId: 'me.infobus.rajeshwaran',

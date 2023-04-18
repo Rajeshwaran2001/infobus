@@ -1,6 +1,6 @@
 {
   "name": "infobus",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Dashboard App For Infobus",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "keywords": [
     "Dahboard"
   ],
-  "author": "<https://rajeshwaran.me>",
+  "author": "Rajeshwaran <https://rajeshwaran.me>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Rajeshwaran2001/infobus/issues"
