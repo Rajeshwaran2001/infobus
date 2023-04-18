@@ -55,6 +55,17 @@ module.exports = {
       platforms: ['darwin'],
     },
     {
+      name: "@electron-forge/maker-dmg",
+      config: {
+        name: "infobus",
+        title: "InfoBus",
+        icon: path.resolve(__dirname, "assets", "icons", "logo.icns"),
+        background: path.resolve(__dirname, "assets", "background.png"),
+        format: "ULFO",
+        overwrite: true,
+      },
+    },
+    {
       "name": "@electron-forge/maker-deb",
       "config": {}
     },

@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/Rajeshwaran2001/infobus/issues"
   },
-  "homepage": "https://github.com/Rajeshwaran2001/infobus#readme",
+  "homepage": "https://rajeshwaran.me",
   "devDependencies": {
     "@electron-forge/cli": "^6.1.1",
     "@electron-forge/maker-deb": "^6.1.1",
@@ -41,8 +41,9 @@
     "appId": "in.dashboard.infobus",
     "productName": "Infobus",
     "copyright": "Copyright © 2023 ${author}",
+    "homepage": "https://rajeshwaran.me",
     "squirrelWindows": {
-      "name": "Infobus Dashboard",
+      "name": "Infobus",
       "iconUrl": "https://raw.githubusercontent.com/Rajeshwaran2001/infobus/main/assets/icons/logo.ico",
       "setupIcon": "./assets/icons/logo.ico",
       "shortcutName": "Infobus",
