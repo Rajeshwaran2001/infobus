@@ -60,7 +60,7 @@ module.exports = {
         name: "infobus",
         title: "InfoBus",
         icon: path.resolve(__dirname, "assets", "icons", "logo.icns"),
-        background: path.resolve(__dirname, "assets", "background.png"),
+        background: path.resolve(__dirname, "assets", "background.jpg"),
         format: "ULFO",
         overwrite: true,
       },
