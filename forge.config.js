@@ -10,15 +10,15 @@ const commonLinuxConfig = {
   icon: {
     scalable: path.resolve(iconDir, 'logo.svg'),
   },
-  mimeType: ['x-scheme-handler/infobus'],
+  mimeType: ['x-scheme-handler/InfoBus'],
 };
 module.exports = {
   packagerConfig: {
-    name: 'infobus',
-    executableName: 'infobus',
+    name: 'InfoBus',
+    executableName: 'InfoBus',
     asar: true,
     icon: path.resolve(__dirname, 'assets', 'icons', 'logo'),
-    appBundleId: 'me.infobus.rajeshwaran',
+    appBundleId: 'me.InfoBus.rajeshwaran',
   },
   rebuildConfig: {},
   publishers: [
@@ -27,7 +27,7 @@ module.exports = {
       config: {
         repository: {
           owner: 'Rajeshwaran2001',
-          name: 'infobus',
+          name: 'InfoBus',
         },
         prerelease: false,
         draft: true,
@@ -57,8 +57,10 @@ module.exports = {
     {
       name: "@electron-forge/maker-dmg",
       config: {
-        name: "infobus",
+        name: `InfoBus-v${version}-mac-${process.platform}`,
         title: "InfoBus",
+        version: "${version}",
+        platform: "${platform}",
         icon: path.resolve(__dirname, "assets", "icons", "logo.icns"),
         background: path.resolve(__dirname, "assets", "background.jpg"),
         format: "ULFO",
