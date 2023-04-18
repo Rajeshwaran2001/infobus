@@ -14,11 +14,11 @@ const commonLinuxConfig = {
 };
 module.exports = {
   packagerConfig: {
-    name: 'InfoBus',
-    executableName: 'InfoBus',
+    name: 'infobus',
+    xecutableName: 'infobus',
     asar: true,
     icon: path.resolve(__dirname, 'assets', 'icons', 'logo'),
-    appBundleId: 'me.InfoBus.rajeshwaran',
+    appBundleId: 'me.infobus.rajeshwaran',
   },
   rebuildConfig: {},
   publishers: [
@@ -57,10 +57,8 @@ module.exports = {
     {
       name: "@electron-forge/maker-dmg",
       config: {
-        name: `InfoBusmac`,
+        name: "infobus",
         title: "InfoBus",
-        version: "${version}",
-        platform: "${platform}",
         icon: path.resolve(__dirname, "assets", "icons", "logo.icns"),
         background: path.resolve(__dirname, "assets", "background.jpg"),
         format: "ULFO",
