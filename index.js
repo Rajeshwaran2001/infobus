@@ -29,6 +29,8 @@ function createWindow() {
       loadingScreen.close();
     }
     mainWindow.show();
+    autoUpdater.checkForUpdatesAndNotify();
+    updateInterval = setInterval(() => autoUpdater.checkForUpdates(), 600000);
   });
 
   // Check for updates on app start
@@ -38,7 +40,7 @@ function createWindow() {
     "repo": "infobus",
     "releaseType": "draft"
   });
-  autoUpdater.checkForUpdatesAndNotify();
+  
 
   mainWindow.on('closed', function () {
     mainWindow = null;
@@ -74,23 +76,13 @@ app.on('before-quit', () => {
 });
 
 // Listen for updates
-app.on('update-downloaded', (event, releaseNotes, releaseName) => {
-  const dialogOpts = {
-    type: 'info',
-    buttons: ['Restart', 'Later'],
-    title: 'Application Update',
-    message: process.platform === 'win32' ? releaseNotes : releaseName,
-    detail: 'A new version has been downloaded. Restart the application to apply the updates.'
-  }
 
-  dialog.showMessageBox(dialogOpts).then((returnValue) => {
-    if (returnValue.response === 0) autoUpdater.quitAndInstall()
-  })
-})
-
-// Listen for updates
 autoUpdater.on('update-available', () => {
-  console.log('Update available');
+  mainWindow.webContents.send('update_available');
+});
+
+autoUpdater.on('update-downloaded', () => {
+  mainWindow.webContents.send('update_downloaded');
 });
 
 autoUpdater.on('update-not-available', () => {
