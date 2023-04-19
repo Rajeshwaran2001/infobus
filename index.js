@@ -32,6 +32,12 @@ function createWindow() {
   });
 
   // Check for updates on app start
+  autoUpdater.setFeedURL({
+    "provider": "github",
+    "owner": "Rajeshwaran2001",
+    "repo": "infobus",
+    "releaseType": "draft"
+  });
   autoUpdater.checkForUpdatesAndNotify();
 
   mainWindow.on('closed', function () {
