@@ -33,7 +33,7 @@ function createWindow() {
     updateInterval = setInterval(() => autoUpdater.checkForUpdates(), 600000);
   });
 
-  // Check for updates on app start
+  // Check for updates on app starts
   autoUpdater.setFeedURL({
     "provider": "github",
     "owner": "Rajeshwaran2001",
