@@ -20,33 +20,33 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: npm run publish
 
-  publish_on_mac:
-    runs-on: macos-latest
+  # publish_on_mac:
+  #   runs-on: macos-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16
 
-      - name: Clean install dependencies
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install
+  #     - name: Clean install dependencies
+  #       run: |
+  #         rm -rf node_modules package-lock.json
+  #         npm install
 
-      - name: Verify installed dependencies
-        run: npm list --depth=0
+  #     - name: Verify installed dependencies
+  #       run: npm list --depth=0
 
-      - name: Ensure appdmg is installed
-        run: npm install --save-dev appdmg
+  #     - name: Ensure appdmg is installed
+  #       run: npm install --save-dev appdmg
 
-      - name: Publish application
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run publish
+  #     - name: Publish application
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run: npm run publish
 
   publish_on_win:
     runs-on: windows-latest
