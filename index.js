@@ -14,6 +14,7 @@ function createLoadingScreen() {
   loadingScreen.loadURL(`file://${__dirname}/loading.html`);
   loadingScreen.on('closed', () => (loadingScreen = null));
 }
+//helo
 
 function createWindow() {
   // Get the screen size of the user's display
