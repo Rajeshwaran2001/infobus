@@ -22,7 +22,7 @@ function createWindow() {
 
   // Create the main window with the screen size
   mainWindow = new BrowserWindow({ width, height, show: false });
-  mainWindow.loadURL('https://portal.busads.in/new-view/');
+  mainWindow.loadURL('https://portal.busads.in/login/');
 
   // Show the loading screen while the page is loading
   mainWindow.once('ready-to-show', () => {
